@@ -9,29 +9,32 @@
     html, body {
       height: 100%;
       margin: 0;
-      background: #000; /* dark field behind contained image */
+      background: #000; /* black field on the right */
       font-family: "Times New Roman", Times, serif;
-    }
-
-    body {
-      background-image: url("fireworks.jpg");
-      background-size: contain;       /* show the entire image */
-      background-position: center;
-      background-repeat: no-repeat;
       color: #f5f2ea;
     }
 
-    /* container that pins content to top-right */
-    .corner {
+    /* full-screen layout split visually by the contained image */
+    body {
+      background-image: url("fireworks.jpg");
+      background-size: contain;      /* show entire image */
+      background-position: left center; /* push image fully left */
+      background-repeat: no-repeat;
+    }
+
+    /* right-side vertical centering */
+    .right {
       position: absolute;
-      top: 2rem;
-      right: 2rem;
-      text-align: right;
+      top: 50%;
+      right: 4rem;
+      transform: translateY(-50%);
+      text-align: center;
       line-height: 1.6;
+      max-width: 18rem;
     }
 
     .name {
-      font-size: 1.6rem;   /* close to your original scale */
+      font-size: 1.6rem;
       margin: 0 0 1rem 0;
       font-weight: normal;
       text-shadow: 0 2px 12px rgba(0,0,0,0.7);
@@ -39,10 +42,10 @@
 
     .nav a {
       display: block;
-      font-size: 1.1rem;   /* original modest size */
+      font-size: 1.1rem;
       color: inherit;
       text-decoration: none;
-      margin: 0.15rem 0;
+      margin: 0.2rem 0;
       text-shadow: 0 2px 12px rgba(0,0,0,0.7);
     }
 
@@ -55,7 +58,7 @@
 </head>
 
 <body>
-  <div class="corner">
+  <div class="right">
     <h1 class="name">J.D. Hosemann</h1>
 
     <nav class="nav" aria-label="Primary">
