@@ -4,50 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>J.D. Hosemann</title>
+
   <style>
-    html, body { height: 100%; margin: 0; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #000; /* dark field behind contained image */
+      font-family: "Times New Roman", Times, serif;
+    }
 
     body {
-      background: url("fireworks.jpg") center / cover no-repeat;
-      font-family: "Times New Roman", Times, serif;
-      color: #f7f4ee;
+      background-image: url("fireworks.jpg");
+      background-size: contain;       /* show the entire image */
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #f5f2ea;
     }
 
-    /* dark veil for legibility; still feels minimal */
-    .overlay {
-      min-height: 100%;
-      background: rgba(0, 0, 0, 0.48);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.25rem;
-      box-sizing: border-box;
-    }
-
-    .panel {
-      width: 100%;
-      max-width: 36rem;
-      text-align: center;
+    /* container that pins content to top-right */
+    .corner {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      text-align: right;
+      line-height: 1.6;
     }
 
     .name {
-      margin: 0 0 2.25rem 0;
+      font-size: 1.6rem;   /* close to your original scale */
+      margin: 0 0 1rem 0;
       font-weight: normal;
-      letter-spacing: 0.02em;
-      line-height: 1.05;
-      font-size: clamp(2.2rem, 7vw, 3.4rem);
-      text-shadow: 0 2px 20px rgba(0,0,0,0.75);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.7);
     }
 
     .nav a {
-      display: inline-block;
-      font-size: clamp(1.45rem, 4.8vw, 2.2rem);
-      line-height: 1.2;
-      padding: 1rem 1.4rem;   /* bigger tap targets */
-      margin: 0.35rem 0;
+      display: block;
+      font-size: 1.1rem;   /* original modest size */
       color: inherit;
       text-decoration: none;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.75);
+      margin: 0.15rem 0;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.7);
     }
 
     .nav a:hover,
@@ -59,16 +55,14 @@
 </head>
 
 <body>
-  <div class="overlay">
-    <div class="panel">
-      <h1 class="name">J.D. Hosemann</h1>
+  <div class="corner">
+    <h1 class="name">J.D. Hosemann</h1>
 
-      <nav class="nav" aria-label="Primary">
-        <div><a href="bio.html">Bio</a></div>
-        <div><a href="writing.html">Writing</a></div>
-        <div><a href="contact.html">Contact</a></div>
-      </nav>
-    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="bio.html">Bio</a>
+      <a href="writing.html">Writing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
 </body>
 </html>
