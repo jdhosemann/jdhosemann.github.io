@@ -9,30 +9,67 @@
     html, body {
       height: 100%;
       margin: 0;
-      background: #000;
       font-family: "Times New Roman", Times, serif;
+      background: #000;
       color: #f5f2ea;
     }
 
     body {
       background-image: url("fireworks.jpg");
-      background-size: contain;          /* show full image */
-      background-position: left center;  /* push image fully left */
+      background-size: contain;
+      background-position: left center;
       background-repeat: no-repeat;
     }
 
-    /* container representing the right black half */
+    /* Right black field that is definitely visible and definitely on top */
     .right-half {
-      position: absolute;
+      position: fixed;
       right: 0;
       top: 0;
       width: 50%;
       height: 100%;
+      background: #000;
+      z-index: 10;
+
       display: flex;
-      align-items: center;     /* vertical center */
-      justify-content: center; /* horizontal center within black half */
+      align-items: center;
+      justify-content: center;
     }
 
-    /* actual text block */
     .text {
-      text-align: left;  /* left-aligne*
+      text-align: left;
+      line-height: 1.6;
+      font-size: 1.15rem;
+      padding: 0 2rem;
+    }
+
+    .name {
+      margin: 0 0 0.6rem 0;
+    }
+
+    .text a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      margin: 0.2rem 0;
+    }
+
+    .text a:hover,
+    .text a:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="right-half">
+    <div class="text">
+      <div class="name">J.D. Hosemann</div>
+      <a href="bio.html">Bio</a>
+      <a href="writing.html">Writing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</body>
+</html>
